@@ -1,6 +1,8 @@
 # Arduino
 Arduino Libraries and Projects
 
+Arduino Interrupt Driven Push Button Monitoring with Queue
+
 Recently I came to a need to act on a push button that will be monitored by an external interrupt. Connecting a pushbutton on the pins that support hardware interrupts enables this (although on the original Arduino there are only 2 such pins, meaning you can monitor in the background using interrupts only 2 such push buttons). Arduino Leonardo, Mega2560 do have support for hardware interrupt on more pins (see https://www.arduino.cc/en/Reference/AttachInterrupt).
 I came to the idea of developing a simple class library that will automate the use of push button object configured to a (hardware interrupt supported) pin that will fire a user defined function once pressed (actually once released to be exact). So here it is, hopefully someone else can find a use of it (or make a comment). Performs basic software debouncing and returns the duration the button has been pressed. Supports active low (connecting the pin to GND) and active high (connecting the pin to Vcc)  pushbuttons. 
 
