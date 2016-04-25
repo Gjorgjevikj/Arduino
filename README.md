@@ -27,3 +27,11 @@ I came to the idea of developing a simple class library that will automate the u
 Interrupts needs a void function (not part of the class) to act as interrupt service routine that must be defined outside the class as a wrapper to member function to be called on button change state (from the interrupt). Macros to automate Push button object instatiation with automatic interrupt service routine (global void function) definition are provided.  
 
 Finally, since everything is interrupt driven and working in the background (the loop is empty), even the use defined function to be activated when the button is pressed is called from the interrupt. These user defined functions can last and usually have a need of enabled interrupts, so a recursive call of an interrupt from another interrupt is possible (though not the same one). As a result if the button is pressed multiple times while the used defined function was executing, this button press events (of the same button) will be ignored. If you need to act on them please see the other branch of this project idPushButtonQueued.
+This example uses 2 interrupt driven push buttons at the same time.
+ 
+ - Hardware interrupts
+  Board     int.0   int.1   int.2   int.3   int.4   int.5
+ Uno, Nano  2   3
+ Mega2560   2   3   21    20    19    18
+ Leonardo   3   2   0   1
+ Due            (any pin, more info http://arduino.cc/en/Reference/AttachInterrupt)
