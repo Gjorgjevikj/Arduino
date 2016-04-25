@@ -26,3 +26,11 @@ Interrupts need a void function (not part of the class) to act as interrupt serv
 
 Finally, since everything is interrupt driven and is working in the "background" (ouside the the loop()), even the user defined function to be activated when the button is pressed is executed from the interrupt. The user defined functions can last and usually have a need of enabled interrupts, so a recursive call of an interrupt from another interrupt is possible (even the same one). As a result if the button is pressed multiple times while the user defined function was executing, the consecutive button press events (of the same button) will be queued and wuill fire the user function again onece its current execution finishes. The queue size can be configured, and also the strategy of how to act when the queue is full. The possible choices for strategy are: (1) to discard all button presses after the queue is full, until a space is not eptied by dequing (after the user defined function ends) or (2) to discard the oldest unserviced requests waiting in the queue by overwriting them with the most recent ones.
 
+ - Hardware interrupts
+  Board     int.0   int.1   int.2   int.3   int.4   int.5
+ Uno, Nano  2   3
+ Mega2560   2   3   21    20    19    18
+ Leonardo   3   2   0   1
+ Due            (any pin, more info http://arduino.cc/en/Reference/AttachInterrupt)
+
+ The included example use 2 interrupt driven push buttons at the same time.
