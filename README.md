@@ -31,7 +31,7 @@ This example uses 2 interrupt driven push buttons at the same time.
  
  - Hardware interrupts
   Board     int.0   int.1   int.2   int.3   int.4   int.5
- Uno, Nano  2   3
- Mega2560   2   3   21    20    19    18
- Leonardo   3   2   0   1
- Due            (any pin, more info http://arduino.cc/en/Reference/AttachInterrupt)
+ - Uno, Nano  2   3
+ - Mega2560   2   3   21    20    19    18
+ - Leonardo   3   2   0   1
+ - Due            (any pin, more info http://arduino.cc/en/Reference/AttachInterrupt)
